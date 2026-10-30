@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitalisation du Luxe — Projet de Sakina Mohamed Said Allaoui</title>
+  <meta name="description" content="Présentation détaillée du projet de Business Intelligence « Digitalisation du Luxe : e-commerce & marque (2015–2030) ».">
+
+  <!-- Même favicon et même police que la page d'accueil -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23185FA5'/%3E%3Ctext x='32' y='44' font-family='Arial' font-size='26' font-weight='700' text-anchor='middle' fill='%23FFFFFF'%3ESA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== Mêmes couleurs que la page d'accueil ===== */
+    :root {
+      --nuit: #042c53;
+      --ciel: #e6f1fb;
+      --ciel-bord: #b5d4f4;
+      --or: #185fa5;
+      --or-fonce: #0c447c;
+      --texte: #1e2a38;
+      --texte-doux: #4a5a6c;
+      --fond: #ffffff;
+      --fond-doux: #f5f9fd;
+      --bordure: #dbe7f3;
+      --arrondi: 12px;
+      --ombre: 0 8px 24px rgba(15, 27, 45, 0.10);
+      --transition: 0.25s ease;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+      font-size: 15px; line-height: 1.7;
+      color: var(--texte); background: var(--fond);
+      overflow-x: hidden;
+    }
+    .conteneur { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .etroit { max-width: 760px; }
+    p { max-width: 70ch; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--or); outline-offset: 3px; }
+
+    h1 { font-size: 34px; line-height: 1.2; font-weight: 700; color: var(--nuit); }
+    h2 {
+      font-size: 22px; line-height: 1.3; font-weight: 700; color: var(--nuit);
+      text-transform: uppercase; letter-spacing: 0.01em; margin-bottom: 24px;
+    }
+    h2::after { content: ""; display: block; width: 48px; height: 3px; background: var(--or); margin-top: 12px; border-radius: 2px; }
+    h3 { font-size: 16px; font-weight: 600; color: var(--nuit); }
+
+    /* ===== Boutons (identiques à l'accueil) ===== */
+    .bouton {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 44px; padding: 0 24px; border-radius: 999px;
+      font: inherit; font-weight: 600; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      text-decoration: none; cursor: pointer; border: 2px solid transparent;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+    .bouton.principal { background: var(--or); color: #fff; }
+    .bouton.principal:hover { background: var(--or-fonce); transform: translateY(-2px); }
+    .bouton.contour { border-color: var(--or); color: var(--or-fonce); background: #fff; }
+    .bouton.contour:hover { background: var(--or); color: #fff; }
+
+    /* ===== Menu ===== */
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.95); border-bottom: 1px solid var(--bordure); }
+    nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; }
+    .retour {
+      color: var(--texte-doux); text-decoration: none; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap;
+      transition: color var(--transition);
+    }
+    .retour:hover { color: var(--or); }
+    .logo { font-weight: 700; font-size: 18px; color: var(--nuit); text-decoration: none; white-space: nowrap; }
+    .logo .point { color: var(--or); }
+
+    /* ===== En-tête du projet ===== */
+    .entete { background: var(--ciel); padding: 40px 0; }
+    .entete .petit-titre { font-size: 13px; color: var(--texte-doux); margin-bottom: 4px; }
+    .entete h1 { margin-bottom: 12px; }
+    .etiquettes { display: flex; flex-wrap: wrap; gap: 8px; }
+    .etiquette {
+      background: var(--ciel); border: 1px solid var(--ciel-bord); color: var(--or-fonce);
+      font-size: 13px; font-weight: 500; padding: 3px 12px; border-radius: 999px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 16px; }
+
+    /* ===== Sections ===== */
+    section { padding: 56px 0; }
+    .partie { margin-bottom: 48px; }
+    .partie:last-child { margin-bottom: 0; }
+    .partie h2 { font-size: 18px; margin-bottom: 16px; }
+    .partie h2::after { width: 32px; margin-top: 8px; }
+    section.gris { background: var(--fond-doux); }
+
+    /* Captures en petites vignettes, sur une ligne (style pièces jointes) */
+    .vignettes {
+      display: flex; gap: 16px;
+      overflow-x: auto; padding: 4px 4px 12px;
+      scroll-snap-type: x mandatory;
+    }
+    .vignette {
+      flex: none; width: 200px;
+      background: #fff; border: 1px solid var(--bordure); border-radius: 8px;
+      overflow: hidden; cursor: zoom-in; padding: 0; text-align: left;
+      font: inherit; scroll-snap-align: start;
+      transition: box-shadow var(--transition), border-color var(--transition);
+    }
+    .vignette:hover { box-shadow: var(--ombre); border-color: var(--ciel-bord); }
+    .vignette img {
+      display: block; width: 100%; height: 120px;
+      object-fit: cover; object-position: top left;
+      border-bottom: 1px solid var(--bordure);
+    }
+    .vignette span {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--nuit);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .vignette svg { flex: none; width: 16px; height: 16px; color: var(--or); }
+
+    /* Agrandissement d'une capture au clic */
+    .zoom {
+      position: fixed; inset: 0; z-index: 50;
+      background: rgba(4, 44, 83, 0.85);
+      display: flex; align-items: center; justify-content: center; padding: 24px;
+    }
+    .zoom[hidden] { display: none; }
+    .zoom img { max-width: 100%; max-height: 90vh; border-radius: 8px; background: #fff; }
+    .zoom button {
+      position: absolute; top: 16px; right: 16px;
+      width: 44px; height: 44px; border-radius: 50%; border: 0;
+      background: #fff; color: var(--nuit); font-size: 18px; cursor: pointer;
+    }
+
+    /* Bas de page */
+
+    @media (max-width: 640px) {
+      .conteneur { padding: 0 16px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 19px; }
+      .entete, section { padding: 40px 0; }
+      .actions .bouton { width: 100%; }
+      .vignette { width: 170px; }
+      .vignette img { height: 100px; }
+      .logo { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="conteneur" aria-label="Navigation">
+      <a href="index.html#projets" class="retour">← Retour au portfolio</a>
+      <a href="index.html" class="logo">Sakina Mohamed Said Allaoui<span class="point">.</span></a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== TITRE ===== -->
+    <section class="entete">
+      <div class="conteneur">
+        <p class="petit-titre">projet personnel</p>
+        <h1>Digitalisation du Luxe : e-commerce &amp; marque (2015–2030)</h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur">
+
+        <!-- 1. Explication du projet -->
+        <div class="partie">
+          <h2>Le projet</h2>
+          <p>Un dashboard interactif de Business Intelligence sur la digitalisation du secteur du luxe, conçu pour organiser, analyser et valoriser les données de manière claire, structurée et intuitive.</p>
+        </div>
+
+        <!-- 2. Outils utilisés -->
+        <div class="partie">
+          <h2>Outils utilisés</h2>
+          <div class="etiquettes">
+            <span class="etiquette">Power BI</span>
+            <span class="etiquette">Python</span>
+            <span class="etiquette">Streamlit</span>
+          </div>
+        </div>
+
+        <!-- 3. Captures d'écran (petites vignettes cliquables)
+             Mets tes captures dans le même dossier que cette page : luxe-1.png, luxe-2.png, luxe-3.png.
+             Une capture absente est cachée ; s'il n'y en a aucune, cette partie est cachée.
+             Change le texte après chaque icône pour nommer chaque capture. -->
+        <div class="partie" id="apercu">
+          <h2>Captures d'écran</h2>
+        <div class="vignettes" id="vignettes">
+          <button type="button" class="vignette"><img src="luxe-1.png" alt="Capture : Vue Direction" loading="lazy"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg>Vue Direction</span></button>
+          <button type="button" class="vignette"><img src="luxe-2.png" alt="Capture : E-commerce" loading="lazy"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg>E-commerce</span></button>
+          <button type="button" class="vignette"><img src="luxe-3.png" alt="Capture : Marques" loading="lazy"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg>Marques</span></button>
+        </div>
+        </div>
+
+        <!-- 4. Code -->
+        <div class="partie">
+          <h2>Code</h2>
+          <a href="https://github.com/Sakina-msa/luxe-bi" class="bouton principal" target="_blank" rel="noopener">Voir le code sur GitHub</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Fenêtre d'agrandissement des captures -->
+  <div class="zoom" id="zoom" hidden role="dialog" aria-modal="true" aria-label="Capture agrandie">
+    <button type="button" id="fermer-zoom" aria-label="Fermer">✕</button>
+    <img id="zoom-img" alt="">
+  </div>
+
+  <script>
+    /* 1. Cacher les captures absentes (et la section s'il n'y en a aucune) */
+    const vignettes = document.querySelectorAll(".vignette");
+    let manquantes = 0;
+    vignettes.forEach((v) => {
+      const img = v.querySelector("img");
+      const cacher = () => {
+        v.style.display = "none"; manquantes++;
+        if (manquantes === vignettes.length) document.getElementById("apercu").hidden = true;
+      };
+      if (img.complete && img.naturalWidth === 0) cacher();
+      else img.addEventListener("error", cacher);
+    });
+
+    /* 2. Agrandir une capture au clic */
+    const zoom = document.getElementById("zoom");
+    const zoomImg = document.getElementById("zoom-img");
+    vignettes.forEach((v) => {
+      v.addEventListener("click", () => {
+        const img = v.querySelector("img");
+        zoomImg.src = img.src;
+        zoomImg.alt = img.alt;
+        zoom.hidden = false;
+        document.getElementById("fermer-zoom").focus();
+      });
+    });
+    let derniere = null;
+    vignettes.forEach((v) => v.addEventListener("click", () => { derniere = v; }));
+    const fermer = () => { zoom.hidden = true; if (derniere) derniere.focus(); };
+    document.getElementById("fermer-zoom").addEventListener("click", fermer);
+    zoom.addEventListener("click", (e) => { if (e.target === zoom) fermer(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") fermer(); });
+  </script>
+
+</body>
+</html>
